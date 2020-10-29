@@ -1,0 +1,35 @@
+@startuml
+
+title Febona - Class Diagram
+
+class Nadador {
+    +String nombre
+    +double peso
+    +int peso
+}
+
+enum EstiloNatacion
+{
+   LIBRE
+   PECHO
+   MARIPOSA
+   ESPALDA
+}
+
+class PruebaNatacion
+{
+    EstiloNatacion estiloNatacion
+    int distancia
+}
+
+class Febona
+{
+
+}
+
+PruebaNatacion "1" *-up- "1" EstiloNatacion: Composition
+Nadador "1" *-up- "many" PruebaNatacion: Composition
+Febona "1" *-up- "many" Nadador: Composition
+
+
+@enduml
