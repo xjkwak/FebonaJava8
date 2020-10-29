@@ -2,6 +2,7 @@ package com.oracle;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Nadador {
     private String nombre;
@@ -57,5 +58,13 @@ public class Nadador {
         this.pruebas.forEach(p -> p.mostrar());
 
         System.out.println();
+    }
+
+    public void mostrarPruebas() {
+        String pruebas = this.pruebas.stream().
+                map(p -> p.getDistancia() + " metros " + p.getEstiloNatacion()).
+                collect(Collectors.joining(","));
+
+        System.out.println("Las pruebas del nadador son: " + pruebas);
     }
 }

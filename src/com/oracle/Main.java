@@ -1,5 +1,7 @@
 package com.oracle;
 
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -30,5 +32,19 @@ public class Main {
         febona.registrarNadador(n2);
 
         febona.mostrarNadadores();
+
+        Nadador respuesta = febona.getNadadorMasAlto();
+
+        System.out.println("El nadador mas alto: " + respuesta.getNombre());
+
+        List<Nadador> res = febona.buscar("Mi");
+
+        System.out.println("Resultados de la busqueda: ");
+        res.forEach(n -> System.out.println(n.getNombre()));
+
+        System.out.println("Los nombres de los nadadores en Mayusculas: ");
+        febona.mostrarNombresNadadores();
+
+        n2.mostrarPruebas();
     }
 }
